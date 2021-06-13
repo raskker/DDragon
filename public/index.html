@@ -8,10 +8,27 @@
     <title><%= htmlWebpackPlugin.options.title %></title>
   </head>
   <body>
-    <noscript>
-      <strong>We're sorry but <%= htmlWebpackPlugin.options.title %> doesn't work properly without JavaScript enabled. Please enable it to continue.</strong>
-    </noscript>
+    <nav class="navbar navbar-expand-lg bg-dark navbar-dark">
+      <a href="#" class="navbar-brand">DDRAGON</a>
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navmenu">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navmenu">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a href="#home" class="nav-link">Home</a>
+          </li>
+          <li class="nav-item">
+            <a href="#champs" class="nav-link">Champions</a>
+          </li>
+          <li class="nav-item">
+            <a href="#items" class="nav-link">Items</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
     <div id="app"></div>
-    <!-- built files will be auto injected -->
   </body>
 </html>
