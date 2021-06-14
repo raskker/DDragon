@@ -2,55 +2,15 @@
 <section class="p-5">
   <div class="container">
     <div class="row">
-      <div class="col-md m-3">
+      <div class="col-md m-3" v-for="c in champions" v-bind:key="c.key">
         <div class="card bg-dark text-light">
-          <div class="card-body text-center">
-            <h3 class="card-title mb-3">Championname</h3>
+          <div class="card-body text-center" >
+            <img :src="c.icon" alt="">
+            <h3 class="card-title mb-3">{{ c.name }}</h3>
             <p class="card-text pb-2">
-              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Exercitationem, temporibus doloribus. 
-              Sint repellendus asperiores, nesciunt tenetur ex ea error vel necessitatibus sed, eligendi repellat 
-              molestias eum velit suscipit totam molestiae.
+              {{c.description}}
             </p>
             <a href="" class="btn btn-primary">Learn More</a>
-          </div>
-        </div>
-      </div>
-      <div class="col-md m-3">
-        <div class="card bg-dark text-light">
-          <div class="card-body text-center">
-            <h3 class="card-title mb-3">Championname</h3>
-            <p class="card-text pb-2">
-              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Exercitationem, temporibus doloribus. 
-              Sint repellendus asperiores, nesciunt tenetur ex ea error vel necessitatibus sed, eligendi repellat 
-              molestias eum velit suscipit totam molestiae.
-            </p>
-            <a href="" class="btn btn-primary">Learn More</a>
-          </div>
-        </div>
-      </div>
-      <div class="col-md m-3">
-        <div class="card bg-dark text-light">
-          <div class="card-body text-center">
-            <h3 class="card-title mb-3">Championname</h3>
-            <p class="card-text pb-2">
-              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Exercitationem, temporibus doloribus. 
-              Sint repellendus asperiores, nesciunt tenetur ex ea error vel necessitatibus sed, eligendi repellat 
-              molestias eum velit suscipit totam molestiae.
-            </p>
-            <a href="" class="btn btn-primary">Learn More</a>
-          </div>
-        </div>
-      </div>
-      <div class="col-md m-3">
-        <div class="card bg-dark text-light">
-          <div class="card-body text-center">
-            <h3 class="card-title mb-3">Championname</h3>
-            <p class="card-text pb-2">
-              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Exercitationem, temporibus doloribus. 
-              Sint repellendus asperiores, nesciunt tenetur ex ea error vel necessitatibus sed, eligendi repellat 
-              molestias eum velit suscipit totam molestiae.
-            </p>
-            <a href="#" class="btn btn-primary">Learn More</a>
           </div>
         </div>
       </div>
@@ -60,10 +20,19 @@
 </template>
 
 <script>
+import championData from "../assets/champions.json";
 export default {
   name: "HelloWorld",
-  props: {
-    msg: String,
+  data() {
+    return {
+      champions: championData,
+      champss: {},
+    };
+  },
+  methods: {
+    imgsrc(icon) {
+      return icon;
+    },
   },
 };
 </script>
@@ -83,5 +52,9 @@ li {
 }
 a {
   color: #42b983;
+}
+
+.card {
+  min-height: 400px;
 }
 </style>
