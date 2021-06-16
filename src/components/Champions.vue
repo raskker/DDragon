@@ -38,8 +38,4 @@ li {
 a {
   color: #42b983;
 }
-
-.card {
-  /* min-height: 200px; */
-}
 </style>
