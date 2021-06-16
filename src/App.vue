@@ -1,8 +1,26 @@
 <template>
-  <div id="nav">
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
-  </div>
+  
+    <nav class="navbar navbar-expand-lg bg-dark navbar-dark">
+      <a href="#" class="navbar-brand">DDRAGON</a>
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navmenu">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navmenu">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <router-link to="/" class="nav-link">Home</router-link> |
+          </li>
+          <li class="nav-item">
+            <router-link to="/champions" class="nav-link">Champions</router-link>
+          </li>
+          <li class="nav-item">
+            <a href="#items" class="nav-link">Items</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
   <router-view/>
 </template>
 

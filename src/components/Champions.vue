@@ -2,12 +2,12 @@
 <section class="">
   <div class="container">
     <div class="row">
-      <div class="col-md-2 m-3" v-for="c in champions" v-bind:key="c.key">
+      <div class="col-md-2 m-3" v-for="c in $store.state.champions" v-bind:key="c.key">
         <div class="card bg-dark text-light">
           <div class="card-body text-center" >
             <img :src="c.icon" alt="">
             <h3 class="card-title mb-3">{{ c.name }}</h3>
-            <a href="" class="btn btn-primary">Learn More</a>
+            <router-link class="btn btn-primary" :to="{ name: 'ChampionDetails' , params: {name:c.name}}">Learn More</router-link>
           </div>
         </div>
       </div>
@@ -17,20 +17,8 @@
 </template>
 
 <script>
-import championData from "../assets/champions.json";
 export default {
-  name: "HelloWorld",
-  data() {
-    return {
-      champions: championData,
-      champss: {},
-    };
-  },
-  methods: {
-    imgsrc(icon) {
-      return icon;
-    },
-  },
+  name: "Champions",
 };
 </script>
 
