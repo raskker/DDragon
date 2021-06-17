@@ -7,7 +7,7 @@
           <div class="card-body text-center" >
             <img :src="c.icon" alt="">
             <h3 class="card-title mb-3">{{ c.name }}</h3>
-            <router-link class="btn btn-primary" :to="{ name: 'ChampionDetails' , params: {name:c.name}}">Learn More</router-link>
+            <router-link class="btn btn-primary" :to="{ name: 'ChampionDetails' , params: {name:c.id}}">Learn More</router-link>
           </div>
         </div>
       </div>
