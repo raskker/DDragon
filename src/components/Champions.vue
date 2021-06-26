@@ -1,8 +1,13 @@
 <template>
 <section class="">
   <div class="container-fluid">
-    <input type="text" v-model="search" placeholder="Champion suchen...">
-    <div class="row">
+    <div class="input-group mb-3 championSearch">
+      <div class="input-group-prepend">
+    <span class="input-group-text" id="inputGroup-sizing-default"><fa icon="search"></fa></span>
+  </div>
+      <input type="text" v-model="search" placeholder="Champion suchen..." class="form-control">
+    </div>
+    <div class="row justify-content-center">
       <div class="col-md-2 m-3" v-for="c in filteredChamps" v-bind:key="c.key">
         <div class="card bg-dark text-light">
           <div class="card-body text-center" >
@@ -39,16 +44,5 @@ export default {
 <style scoped>
 h3 {
   margin: 40px 0 0;
-}
-ul {
-  list-style-type: none;
-  padding: 0;
-}
-li {
-  display: inline-block;
-  margin: 0 10px;
-}
-a {
-  color: #42b983;
 }
 </style>
