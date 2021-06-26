@@ -1,8 +1,9 @@
 <template>
 <section class="">
-  <div class="container">
+  <div class="container-fluid">
+    <input type="text" v-model="search" placeholder="Champion suchen...">
     <div class="row">
-      <div class="col-md-2 m-3" v-for="c in $store.state.champions" v-bind:key="c.key">
+      <div class="col-md-2 m-3" v-for="c in filteredChamps" v-bind:key="c.key">
         <div class="card bg-dark text-light">
           <div class="card-body text-center" >
             <img :src="c.icon" alt="">
@@ -19,6 +20,18 @@
 <script>
 export default {
   name: "Champions",
+  data() {
+    return {
+      search: "",
+    };
+  },
+  computed: {
+    filteredChamps: function () {
+      return this.$store.state.champions.filter((champ) => {
+        return champ.name.match(this.search);
+      });
+    },
+  },
 };
 </script>
 

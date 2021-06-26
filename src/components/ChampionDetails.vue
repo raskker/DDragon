@@ -3,12 +3,10 @@
             <h1>{{champ.name}}</h1>
             <h4>{{champ.title}}</h4>
             <p>{{champ.shortBio}}</p>
-              <div id="carouselExampleControls" class="carousel slide mb-5" data-bs-ride="carousel">
-                <!-- <ol class="carousel-indicators">
-                  <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-                  <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-                    <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-  </ol> -->
+              <div  id="carouselExampleControls" class="carousel slide mb-5" data-bs-ride="carousel">
+                <div class="carousel-indicators">
+                  <button type="button" data-bs-target="#carouselExampleControls" :data-bs-slide-to="indexDia(index)" v-for="(s, index) in champ.skins" v-bind:key="s.id" :class="{ active: s.id==splashId }" aria-current="true" aria-label="Slide 1"></button>
+                </div>
               <div class="carousel-inner">
                 <div class="carousel-item" :class="{ active: s.id==splashId }" v-for="s in champ.skins" v-bind:key="s.id">
                   <img class="d-block w-100" :src="url(s.splashPath)" alt="">
@@ -36,10 +34,6 @@
               <img class="" :src="urlSpells(s.spellKey)" alt="">
               <p> {{s.description}}</p>
             </div>
-           
-
-        
-        
     </div>
 </template>
 
@@ -75,6 +69,9 @@ export default {
         "/ability-icon/" +
         spell
       );
+    },
+    indexDia(index) {
+      return index.toString();
     },
   },
   computed: {
