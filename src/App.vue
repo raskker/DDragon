@@ -8,7 +8,7 @@
       </button>
 
       <div class="collapse navbar-collapse" id="navmenu">
-        <ul class="navbar-nav">
+        <ul class="navbar-nav me-auto">
           <li class="nav-item">
             <router-link to="/" class="nav-link">Home</router-link>
           </li>
@@ -19,6 +19,8 @@
             <a href="#items" class="nav-link">Items</a>
           </li>
         </ul>
+        
+
       </div>
     </nav>
   <router-view/>

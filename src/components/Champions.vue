@@ -1,12 +1,15 @@
 <template>
 <section class="">
   <div class="container-fluid">
-    <div class="input-group mb-3 championSearch">
-      <div class="input-group-prepend">
-    <span class="input-group-text" id="inputGroup-sizing-default"><fa icon="search"></fa></span>
+     <div class="input-group">
+  <div class="form-floating">
+    <input id="form1" type="search" v-model="search" class="form-control" placeholder="search">
+    <label class="form-label" for="form1">Search</label>
   </div>
-      <input type="text" v-model="search" placeholder="Champion suchen..." class="form-control">
-    </div>
+  <button type="button" class="btn btn-primary">
+    <fa icon="search"></fa>
+  </button>
+</div>
     <div class="row justify-content-center">
       <div class="col-md-2 m-3" v-for="c in filteredChamps" v-bind:key="c.key">
         <div class="card bg-dark text-light">
